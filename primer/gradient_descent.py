@@ -29,17 +29,19 @@ def step_gradient(current_b, current_m, points, learning_rate):
     for i in range(0, len(points)):
         x = points[i][0]
         y = points[i][1]
-        b_gradient += -(2/n) * (y - (current_m * x + current_b))
-        b_gradient += -(2/n) * x * (y - (current_m * x + current_b))
+        guess = current_m * x + current_b
+        error = y - guess
+        b_gradient += error * learning_rate
+        m_gradient += error * x * learning_rate
 
-    new_b = current_b - (learning_rate * b_gradient)
-    new_m = current_m - (learning_rate * m_gradient)
+    # new_b = current_b + (learning_rate * b_gradient)
+    # new_m = current_m + (learning_rate * m_gradient)
 
-    return new_b, new_m
+    return b_gradient, m_gradient
 
 
-def gradient_descent_runner(points, starting_b, starting_m,
-                            learning_rate, num_iterations):
+def gradient_descent(points, starting_b, starting_m,
+                     learning_rate, num_iterations):
     b = starting_b
     m = starting_m
 
@@ -52,17 +54,18 @@ def gradient_descent_runner(points, starting_b, starting_m,
 def run():
     print("running ...")
     points = genfromtxt("../data/primer/data.csv", delimiter=",")
+    print(f"Number of points: {len(points)}")
 
     # hyperparameters
     learning_rate = 0.0001
 
     # y = mx + b (slope formula)
-    initial_b = 0
-    initial_m = 0
+    initial_b = float(0)
+    initial_m = float(0)
     numIterations = 1000
 
-    b, m = gradient_descent_runner(points, initial_b, initial_m,
-                                   learning_rate, numIterations)
+    b, m = gradient_descent(points, initial_b, initial_m,
+                            learning_rate, numIterations)
 
     print(f"Optimized -> y = {m}x + {b}")
 

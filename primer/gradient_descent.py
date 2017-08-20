@@ -1,4 +1,4 @@
-# import numpy as np
+import logging
 from numpy import *
 
 
@@ -71,5 +71,8 @@ def run():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    logging.info("You won't see this.")
+    logging.warning("Watch out")
     run()
     # print(compute_error_for_given_points(3, .5, [[2, 3], [5, 9]]))

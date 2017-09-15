@@ -3,4 +3,5 @@
 > [github](https://github.com/chiphuyen/stanford-tensorflow-tutorials) | [youtube](https://www.youtube.com/watch?v=g-EvyKpZjmQ)
 
 [FAST.ai](http://course.fast.ai)
+> [Files](http://files.fast.ai/files/)
 

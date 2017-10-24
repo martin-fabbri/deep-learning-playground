@@ -5,3 +5,6 @@
 [FAST.ai](http://course.fast.ai)
 > [Files](http://files.fast.ai/files/)
 
+[MIT 6.S191: Introduction to Deep Learning](https://www.youtube.com/watch?v=IgSuFYamZas&list=PLkkuNyzb8LmxFutYuPA7B4oiMn6cjD6Rs)
+> [Labs](https://github.com/yala/introdeeplearning)
+
